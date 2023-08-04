@@ -196,7 +196,7 @@ footer p {
 /* Media Queries */
 
 @media(min-width:450px){
-    .vans-container {
+    .vans--main {
         grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
         max-width: 850px;
         margin: 0 auto;
