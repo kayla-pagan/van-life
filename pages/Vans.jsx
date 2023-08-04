@@ -36,6 +36,8 @@ export default function Vans() {
                     <h3>{van.name}</h3>
                     <p>${van.price}<br />/day</p>
                 </div>
+
+                <i className={`van-type ${van.type} selected`}>{van.type}</i>
             </div>
         ))
     
