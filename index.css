@@ -57,7 +57,7 @@ nav > a:first-of-type {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    min-height: 100vh;
+    min-height: calc(100vh - 11.54em);
     width: 100%;
     display: flex;
     justify-content: center;
