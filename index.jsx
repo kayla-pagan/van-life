@@ -12,13 +12,15 @@ function App() {
   return (
     <BrowserRouter>
       <header>
-        <Link to="/">
-          <h2>#VANLIFE</h2>
-        </Link>
-        <nav>
-          <Link to="/about">About</Link>
-          <Link to="/vans">Vans</Link>
-        </nav>
+        <div className="header--content">
+          <Link to="/">
+            <h2>#VANLIFE</h2>
+          </Link>
+          <nav>
+            <Link to="/about">About</Link>
+            <Link to="/vans">Vans</Link>
+          </nav>
+        </div>
       </header>
       
       <Routes>

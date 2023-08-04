@@ -28,12 +28,16 @@ a:focus, a:hover {
 }
 
 header {
+    padding-block: 2.1875em; 
+}
+
+.header--content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
-    padding-block: 2.1875em; 
 }
 
 header a {
@@ -177,15 +181,22 @@ footer p {
 
 /* vans page */
 
-.vans--main {
+.van--main {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.vans-container {
     display: grid;
     grid-template-columns: minmax(14em, 1fr);
+    grid-gap: 1em;
     justify-items: center;
 }
 
 .van-tile img {
-    width: 14em;
-    height: 14em;
+    width: 100%;
+    min-height: 14em;
 }
 
 .van-info {
@@ -193,12 +204,46 @@ footer p {
     justify-content: space-between;
 }
 
+.van-type {
+    height: 34px;
+    padding: 6px 26px;
+    font-style: normal;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFEAD0;
+    color: #4D4D4D;
+    transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.van-type:hover {
+    color: #FFEAD0;
+}
+
+.van-type:focus {
+    outline: none;
+}
+
+.van-type.selected {
+    color: #FFEAD0;
+}
+
+.van-type.simple:hover, .van-type.simple.selected {
+    background-color: #E17654;
+}
+
+.van-type.rugged:hover, .van-type.rugged.selected {
+    background-color: #115E59;
+}
+
+.van-type.luxury:hover, .van-type.luxury.selected {
+    background-color: #161616;
+}
+
 /* Media Queries */
 
-@media(min-width:450px){
-    .vans--main {
-        grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
-        max-width: 850px;
-        margin: 0 auto;
+@media(min-width:620px){
+    .vans-container {
+        grid-template-columns: 1fr 1fr;
     }
 }

@@ -42,8 +42,10 @@ export default function Vans() {
         ))
     
     return (
-        <main className="vans--main">
-        {vanElements}
+        <main className="van--main">
+            <div className="vans-container">
+                {vanElements}
+            </div>
         </main>
     )
 }
