@@ -52,6 +52,10 @@ nav > a:first-of-type {
     margin-right: 1em;
 }
 
+.home--main, .vans--main {
+    min-height: calc(100vh - 11.54em);
+}
+
 .home--main {
     background-image: url('./assets/images/home-hero.png');
     background-repeat: no-repeat;
@@ -173,7 +177,7 @@ footer p {
 
 /* vans page */
 
-.vans-container {
+.vans--main {
     display: grid;
     grid-template-columns: minmax(14em, 1fr);
     justify-items: center;
