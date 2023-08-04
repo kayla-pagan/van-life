@@ -185,6 +185,7 @@ footer p {
     width: 90%;
     margin: 0 auto;
     max-width: 1200px;
+    padding-block: 3.375em 51875em;
 }
 
 .vans-container {
