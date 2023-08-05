@@ -22,9 +22,16 @@ h2 {
 button {
     border: none;
 }
+button:hover, link:hover {
+    cursor: pointer;
+}
 
 a:focus, a:hover {
     text-decoration: underline;
+}
+
+p span {
+        font-weight: 700;
 }
 
 header {
@@ -56,9 +63,28 @@ nav > a:first-of-type {
     margin-right: 1em;
 }
 
+footer {
+    color: #AAAAAA;
+    background: #252525;
+    display: flex;
+    width: 100%;
+    height: 4.67em;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+footer p {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22.923px;
+}
+
 .home--main, .vans--main {
     min-height: calc(100vh - 11.54em);
 }
+
+/* home page */
 
 .home--main {
     background-image: url('./assets/images/home-hero.png');
@@ -109,22 +135,7 @@ nav > a:first-of-type {
     padding-block: 1.375em 3.23em;
 }
 
-footer {
-    color: #AAAAAA;
-    background: #252525;
-    display: flex;
-    width: 100%;
-    height: 4.67em;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-}
-
-footer p {
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 22.923px;
-}
+/* about page */
 
 .about--hero {
     background-image: url('./assets/images/about-hero.png');
@@ -195,6 +206,12 @@ footer p {
     justify-items: center;
 }
 
+.van-tile a {
+    text-decoration: none;
+    font-family: inherit;
+    color: #161616;
+}
+
 .van-tile img {
     width: 100%;
     min-height: 14em;
@@ -239,6 +256,64 @@ footer p {
 
 .van-type.luxury:hover, .van-type.luxury.selected {
     background-color: #161616;
+}
+
+/* van detail page */
+
+.detail-container {
+    color: #161616;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-block: 2.4375em 5.25em;
+}
+
+.detail-container img {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.detail-container i {
+    margin-top: 3.25em; 
+    margin-bottom: 1.25em;
+}
+
+.detail-container h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.052em;
+}
+
+.detail-container button {
+    width: 100%;
+    color: #FFF;
+    border-radius: 4.983px;
+    background: #FF8C38;
+    text-align: center;
+    font-family: inherit;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.98em;
+}
+
+.detail--van-price {
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2.2076em;
+    padding-block: 0.45em;
+}
+
+.detail--van-description {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.49em;
+    margin-bottom: 1.3525em;
 }
 
 /* Media Queries */
