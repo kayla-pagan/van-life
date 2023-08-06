@@ -47,8 +47,14 @@ header {
     margin: 0 auto;
 }
 
-header a {
+.header--content > a, 
+.header--content > a:active, 
+nav > a, 
+.van-tile a {
     text-decoration: none;
+}
+
+.header--content > a {
     color: #000000;
 }
 
@@ -205,7 +211,6 @@ footer p {
 }
 
 .van-tile a {
-    text-decoration: none;
     font-family: inherit;
     color: #161616;
 }
