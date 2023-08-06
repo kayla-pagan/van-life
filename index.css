@@ -77,7 +77,9 @@ footer p {
     line-height: 22.923px;
 }
 
-.home--main, .vans--main {
+.home--main, 
+.about--main, 
+.vans--main {
     min-height: calc(100vh - 11.54em);
 }
 
@@ -88,7 +90,6 @@ footer p {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    min-height: calc(100vh - 11.54em);
     width: 100%;
     display: flex;
     justify-content: center;
