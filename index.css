@@ -80,9 +80,7 @@ footer p {
     line-height: 22.923px;
 }
 
-.home--main, 
-.about--main, 
-.vans--main {
+main {
     min-height: calc(100vh - 11.54em);
 }
 
@@ -369,13 +367,27 @@ footer p {
 
 /* host van detail */
 
-.host--van-detail-container {
+.host-van-detail--main {
     width: 90%;
+    margin: 0 auto;
+}
+
+.host-van-detail--container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.35em;
+    width: 100%;
     max-width: 1200px;
     padding: 1.625em;
     background-color: #FFF;
     border-radius: 6px;
     margin: 0 auto;
+}
+
+.host-van-detail--container img {
+    width: 90%;
+    height: auto;
 }
 
 /* Media Queries */
