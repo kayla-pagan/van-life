@@ -369,16 +369,38 @@ main {
 
 .host-van-detail--main {
     width: 90%;
+    max-width: 800px;
     margin: 0 auto;
+    padding-block: 3.8125em 2.8125em;
+}
+
+.host-van--back {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding-bottom: 2.3125em;
+}
+
+.host-van--back svg {
+    width: 1.5em;
+    stroke-width: 1.381px;
+    stroke: #858585;
+}
+
+.host-van--back a {
+    color: #201F1D;
+    font-family: inherit;
+    font-size: 0.99rem;
+    font-weight: 500;
+    line-height: 1.4375em;
+    text-decoration-line: underline;
 }
 
 .host-van-detail--container {
     display: flex;
-    flex-direction: column;
     align-items: center;
     gap: 1.35em;
     width: 100%;
-    max-width: 1200px;
     padding: 1.625em;
     background-color: #FFF;
     border-radius: 6px;
@@ -386,8 +408,18 @@ main {
 }
 
 .host-van-detail--container img {
-    width: 90%;
+    width: 40%;
     height: auto;
+    border-radius: 5px;
+}
+
+.host-van--info h3 {
+    padding-block: 1.125em 0.875em;
+    font-size: 1.625rem;
+}
+
+.host-van--info p {
+    font-size: 1.1875rem;
 }
 
 /* Media Queries */

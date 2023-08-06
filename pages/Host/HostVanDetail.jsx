@@ -1,5 +1,6 @@
 import React from "react"
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
+import { HiArrowNarrowLeft } from "react-icons/hi";
 
 export default function HostVanDetail(){
     const params = useParams()
@@ -20,13 +21,18 @@ export default function HostVanDetail(){
     
     return (
         <main className="host-van-detail--main">
+            <div className="host-van--back">
+                <HiArrowNarrowLeft />
+                <Link to={"/host/vans"}>Back to all vans</Link>
+            </div>
+
             {vanInfo ? (
                 <div className="host-van-detail--container">
                     <img src={vanInfo[0].imageUrl} />
-                    <div className="">
+                    <div className="host-van--info">
                         <i className={`van-type ${vanInfo[0].type} selected`}>{vanInfo[0].type}</i>
                         <h3>{vanInfo[0].name}</h3>
-                        <p>${vanInfo[0].price}/day</p>
+                        <p><span>${vanInfo[0].price}</span>/day</p>
                     </div>
                 </div>
             ) : <h2>Loading...</h2>}
