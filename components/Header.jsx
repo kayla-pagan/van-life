@@ -15,20 +15,23 @@ export default function Header(){
                     <h2>#VANLIFE</h2>
                 </Link>
                 <nav>
-                    <NavLink 
-                        style={({isActive}) => isActive ? activeStyle : null} 
-                        to="/host">
-                            Host
+                    <NavLink
+                        to="/host" 
+                        style={({isActive}) => isActive ? activeStyle : null}
+                    >
+                        Host
                     </NavLink>
-                    <NavLink 
-                        style={({isActive}) => isActive ? activeStyle : null} 
-                        to="/about">
-                            About
+                    <NavLink
+                        to="/about"
+                        style={({isActive}) => isActive ? activeStyle : null}
+                    >
+                        About
                     </NavLink>
-                    <NavLink 
-                        style={({isActive}) => isActive ? activeStyle : null} 
-                        to="/vans">
-                            Vans
+                    <NavLink
+                        to="/vans"
+                        style={({isActive}) => isActive ? activeStyle : null}
+                    >
+                        Vans
                     </NavLink>
                 </nav>
             </div>
