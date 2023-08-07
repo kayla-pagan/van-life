@@ -10,7 +10,7 @@ export default function HostVanDetail(){
         async function getVanInfo(){
             const response = await fetch(`/api/host/vans/${params.id}`)
             const data = await response.json()
-            setVanInfo(data.vans[0])
+            setVanInfo(data.vans)
         }
         
         getVanInfo()
