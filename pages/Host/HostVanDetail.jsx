@@ -21,7 +21,7 @@ export default function HostVanDetail(){
         <main className="host-van-detail--main">
             <div className="host-van--back">
                 <HiArrowNarrowLeft />
-                <Link to={"/host/vans"}>Back to all vans</Link>
+                <Link to=".." relative="path">Back to all vans</Link>
             </div>
 
             {vanInfo ? (
