@@ -404,7 +404,7 @@ main {
     margin: 0 auto;
 }
 
-.host-van--detail {
+.host-van-detail {
     display: flex;
     align-items: center;
     gap: 1.35em;
@@ -423,6 +423,10 @@ main {
 
 .host-van--title p {
     font-size: 1.1875rem;
+}
+
+.host-van-detail--nav {
+    display: flex;
 }
 
 /* Media Queries */
