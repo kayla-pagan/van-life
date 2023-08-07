@@ -213,6 +213,7 @@ main {
 .van-tile img {
     width: 100%;
     min-height: 14em;
+    border-radius: 5px;
 }
 
 .van-info {
