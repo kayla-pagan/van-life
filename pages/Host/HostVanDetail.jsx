@@ -1,5 +1,5 @@
 import React from "react"
-import { useParams, Link } from "react-router-dom"
+import { useParams, Link, Outlet } from "react-router-dom"
 import { HiArrowNarrowLeft } from "react-icons/hi";
 
 export default function HostVanDetail(){
@@ -26,12 +26,16 @@ export default function HostVanDetail(){
 
             {vanInfo ? (
                 <div className="host-van-detail--container">
-                    <img src={vanInfo.imageUrl} />
-                    <div className="host-van--info">
-                        <i className={`van-type ${vanInfo.type} selected`}>{vanInfo.type}</i>
-                        <h3>{vanInfo.name}</h3>
-                        <p><span>${vanInfo.price}</span>/day</p>
+                    <div className="host-van--detail">
+                        <img src={vanInfo.imageUrl} />
+                        <div className="host-van--title">
+                            <i className={`van-type ${vanInfo.type} selected`}>{vanInfo.type}</i>
+                            <h3>{vanInfo.name}</h3>
+                            <p><span>${vanInfo.price}</span>/day</p>
+                        </div>
                     </div>
+                        
+                    <Outlet />
                 </div>
             ) : <h2>Loading...</h2>}
         </main>

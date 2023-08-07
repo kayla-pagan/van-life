@@ -397,14 +397,17 @@ main {
 }
 
 .host-van-detail--container {
-    display: flex;
-    align-items: center;
-    gap: 1.35em;
     width: 100%;
     padding: 1.625em;
     background-color: #FFF;
     border-radius: 6px;
     margin: 0 auto;
+}
+
+.host-van--detail {
+    display: flex;
+    align-items: center;
+    gap: 1.35em;
 }
 
 .host-van-detail--container img {
@@ -413,12 +416,12 @@ main {
     border-radius: 5px;
 }
 
-.host-van--info h3 {
+.host-van--title h3 {
     padding-block: 1.125em 0.875em;
     font-size: 1.625rem;
 }
 
-.host-van--info p {
+.host-van--title p {
     font-size: 1.1875rem;
 }
 
