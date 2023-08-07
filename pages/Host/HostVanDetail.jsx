@@ -4,15 +4,13 @@ import { HiArrowNarrowLeft } from "react-icons/hi";
 
 export default function HostVanDetail(){
     const params = useParams()
-    console.log(params)
     const [vanInfo, setVanInfo] = React.useState(null)
-    console.log(vanInfo)
 
     React.useEffect(() => {
         async function getVanInfo(){
             const response = await fetch(`/api/host/vans/${params.id}`)
             const data = await response.json()
-            setVanInfo(data.vans)
+            setVanInfo(data.vans[0])
         }
         
         getVanInfo()
@@ -28,11 +26,11 @@ export default function HostVanDetail(){
 
             {vanInfo ? (
                 <div className="host-van-detail--container">
-                    <img src={vanInfo[0].imageUrl} />
+                    <img src={vanInfo.imageUrl} />
                     <div className="host-van--info">
-                        <i className={`van-type ${vanInfo[0].type} selected`}>{vanInfo[0].type}</i>
-                        <h3>{vanInfo[0].name}</h3>
-                        <p><span>${vanInfo[0].price}</span>/day</p>
+                        <i className={`van-type ${vanInfo.type} selected`}>{vanInfo.type}</i>
+                        <h3>{vanInfo.name}</h3>
+                        <p><span>${vanInfo.price}</span>/day</p>
                     </div>
                 </div>
             ) : <h2>Loading...</h2>}
