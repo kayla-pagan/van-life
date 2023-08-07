@@ -427,6 +427,12 @@ main {
 
 .host-van-detail--nav {
     display: flex;
+    gap: 1.34em;
+    padding-block: 1.625em;
+}
+
+.host-van-detail--nav a {
+    margin-left: 0;
 }
 
 /* Media Queries */

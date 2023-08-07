@@ -43,7 +43,8 @@ export default function HostVanDetail(){
                     <nav className="host-van-detail--nav">
                         <NavLink 
                         to="."
-                        endstyle={({isActive}) => isActive ? activeStyle : null}
+                        end
+                        style={({isActive}) => isActive ? activeStyle : null}
                         >
                             Details
                         </NavLink>
