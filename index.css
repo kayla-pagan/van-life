@@ -189,6 +189,27 @@ main {
     line-height: 1.5em;
 }
 
+/* 404 not found */
+
+.not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.8125em;
+}
+
+.not-found a {
+    color: #FFF;
+    background: #161616;
+    text-align: center;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.759em;
+    border-radius: 4.983px;
+    padding: 0.6em 7.94em;
+}
+
 /* vans page */
 
 .van--main {
