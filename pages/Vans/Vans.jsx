@@ -42,6 +42,12 @@ export default function Vans() {
     return (
         <main className="van--main">
             <h1>Explore our van options</h1>
+            <div className="van--filters">
+                <Link to="?type=simple">Simple</Link>
+                <Link to="?type=luxury">Luxury</Link>
+                <Link to="?type=rugged">Rugged</Link>
+                <Link to=".">Clear filters</Link>
+            </div>
             <div className="vans-container">
                 {vanElements}
             </div>

@@ -198,6 +198,29 @@ main {
     padding-block: 3.375em 5.1875em;
 }
 
+.van--filters {
+    display: flex;
+    align-items: center;
+    gap: 1.25em;
+    padding-block: 1.75em 3.875em;
+}
+
+.van--filters a {
+    color: #4D4D4D;
+    text-align: center;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.49em;
+    background: #FFEAD0;
+    padding: 0.4375em 1.625em;
+    border-radius: 5px;
+}
+
+.van--filters a:last-of-type {
+    background-color: transparent;
+    text-decoration: underline;
+}
+
 .vans-container {
     display: grid;
     grid-template-columns: minmax(14em, 1fr);
