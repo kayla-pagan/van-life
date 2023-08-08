@@ -1,6 +1,6 @@
 import React from "react"
 import { useParams, Link, NavLink, Outlet } from "react-router-dom"
-import { HiArrowNarrowLeft } from "react-icons/hi";
+import { HiArrowNarrowLeft } from "react-icons/hi"
 
 export default function HostVanDetail(){
     const params = useParams()
@@ -24,7 +24,7 @@ export default function HostVanDetail(){
     
     return (
         <main className="host-van-detail--main">
-            <div className="host-van--back">
+            <div className="back">
                 <HiArrowNarrowLeft />
                 <Link to=".." relative="path">Back to all vans</Link>
             </div>

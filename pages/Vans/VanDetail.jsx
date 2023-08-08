@@ -1,10 +1,11 @@
 import React from "react"
-import { useParams } from "react-router-dom"
+import { useParams, Link, useLocation } from "react-router-dom"
+import { HiArrowNarrowLeft } from "react-icons/hi"
 
 export default function VanDetail(){
     const params = useParams()
+    const location = useLocation()
     const [van, setVan] = React.useState(null)
-    console.log(van)
 
     React.useEffect(() => {
         async function getVan(){
@@ -16,8 +17,14 @@ export default function VanDetail(){
         getVan()
     }, [params.id])
 
+    const search = location.state?.search || ""
+
     return (
         <main className="van-detail--main">
+            <div className="back all-vans">
+                <HiArrowNarrowLeft />
+                <Link to={`..${search}`} relative="path">Back to all vans</Link>
+            </div>
             {van ? (
                 <div className="detail-container">
                     <img src={van.imageUrl} />

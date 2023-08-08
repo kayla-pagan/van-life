@@ -278,15 +278,25 @@ main {
 
 /* van detail page */
 
+.van-detail--main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.all-vans {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 2.4375em;
+}
+
 .detail-container {
     color: #161616;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: 90%;
-    max-width: 800px;
     margin: 0 auto;
-    padding-block: 2.4375em 5.25em;
+    padding-block: 0 5.25em;
 }
 
 .detail-container img {
@@ -394,7 +404,7 @@ main {
     padding-block: 3.8125em 2.8125em;
 }
 
-.host-van--back {
+.back {
     display: flex;
     align-items: center;
     gap: 0.5em;
@@ -407,7 +417,7 @@ main {
     stroke: #858585;
 }
 
-.host-van--back a {
+.back a {
     color: #201F1D;
     font-family: inherit;
     font-size: 0.99rem;
@@ -482,6 +492,10 @@ main {
 @media(min-width:620px){
     .vans-container {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .detail-container button {
+        width: 38%;
     }
 
     .host--nav, 
