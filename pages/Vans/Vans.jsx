@@ -1,24 +1,24 @@
 import React from "react"
 import { Link, useSearchParams } from 'react-router-dom'
+import { getVans } from "../../api"
 
 
 export default function Vans() {
     const [vans, setVans] = React.useState([])
     const [searchParams, setSearchParams] = useSearchParams()
+    const [loading, setLoading] = React.useState(false)
 
     const typeFilter = searchParams.get("type")
 
-    console.log(typeFilter)
-    
     React.useEffect(() => {
-        async function fetchData(){
-            const response = await fetch('/api/vans')
-            const data = await response.json()
-            
-            setVans(data.vans)
+        async function loadVans() {
+            setLoading(true)
+            const data = await getVans()
+            setVans(data)
+            setLoading(false)
         }
         
-        fetchData()
+        loadVans()
     }, [])
 
     const displayedVans = typeFilter ? 
@@ -55,6 +55,14 @@ export default function Vans() {
             }
             return prevParams
         })
+    }
+
+    if(loading){
+        return (
+            <main className="loading-container">
+                <img src="./assets/images/loading.gif" />
+            </main>
+        )
     }
     
     return (

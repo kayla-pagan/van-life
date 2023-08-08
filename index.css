@@ -84,6 +84,18 @@ main {
     min-height: calc(100vh - 11.54em);
 }
 
+.loading-container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-container img {
+    width: 10em;
+    height: auto;
+}
+
 /* home page */
 
 .home--main {
