@@ -18,12 +18,13 @@ export default function VanDetail(){
     }, [params.id])
 
     const search = location.state?.search || ""
+    const type = location.state?.type || "all"
 
     return (
         <main className="van-detail--main">
             <div className="back all-vans">
                 <HiArrowNarrowLeft />
-                <Link to={`..${search}`} relative="path">Back to all vans</Link>
+                <Link to={`..${search}`} relative="path">Back to {type} vans</Link>
             </div>
             {van ? (
                 <div className="detail-container">
