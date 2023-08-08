@@ -197,17 +197,18 @@ main {
     align-items: center;
     justify-content: center;
     gap: 1.8125em;
+    padding: 0 1.5em;
+    text-align: center;
 }
 
 .not-found a {
     color: #FFF;
     background: #161616;
-    text-align: center;
-    font-size: 1.125rem;
+    font-size: 0.87rem;
     font-weight: 700;
     line-height: 1.759em;
     border-radius: 4.983px;
-    padding: 0.6em 7.94em;
+    padding: 0.6em 5.94em;
 }
 
 /* vans page */
@@ -534,5 +535,10 @@ main {
         width: 12vw;
         max-width: 120px;
         height: auto;
+    }
+
+    .not-found a {
+        padding: 0.6em 7.94em;
+        font-size: 1.125rem;
     }
 }
