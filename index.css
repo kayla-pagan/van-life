@@ -394,6 +394,11 @@ main {
     text-align: center;
 }
 
+.login-message {
+    font-size: 0.8rem;
+    color: red;
+}
+
 .login-form {
     display: flex;
     flex-direction: column;

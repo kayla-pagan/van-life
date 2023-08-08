@@ -1,8 +1,9 @@
 import React from "react"
-import { useNavigate, Link } from "react-router-dom"
+import { useNavigate, useLocation, Link } from "react-router-dom"
 
 export default function Login(){
     const [loginFormData, setLoginFormData] = React.useState({ email: "", password: ""})
+    const location = useLocation()
 
     function handleSubmit(e){
         e.preventDefault()
@@ -19,6 +20,7 @@ export default function Login(){
 
     return (
         <main className="login-container">
+            {location.state?.message && <p className="login-message">{location.state.message}</p>}
             <h1>Sign in to your account</h1>
             <form onSubmit={handleSubmit} className="login-form">
                 <input
