@@ -1,21 +1,42 @@
 import React from "react"
 import { useParams, Link, useLocation } from "react-router-dom"
 import { HiArrowNarrowLeft } from "react-icons/hi"
+import { getVans } from "../../api"
+import loadingGif from "/assets/images/loading.gif"
 
 export default function VanDetail(){
-    const params = useParams()
+    const { id } = useParams()
     const location = useLocation()
     const [van, setVan] = React.useState(null)
+    const [loading, setLoading] = React.useState(false)
+    const [error, setError] = React.useState(null)
 
     React.useEffect(() => {
-        async function getVan(){
-            const response = await fetch(`/api/vans/${params.id}`)
-            const data = await response.json()
-            setVan(data.vans)
+        async function loadVans() {
+            setLoading(true)
+            try {
+                const data = await getVans(id)
+                setVan(data)
+            } catch (err) {
+                setError(err)
+            } finally {
+                setLoading(false)
+            }
         }
+        loadVans()
+    }, [id])
 
-        getVan()
-    }, [params.id])
+    if(loading){
+        return (
+            <main className="loading-container">
+                <img src={loadingGif} />
+            </main>
+        )
+    }
+
+    if(error) {
+        return <h1>There was an error: {error.message}</h1>
+    }
 
     const search = location.state?.search || ""
     const type = location.state?.type || "all"

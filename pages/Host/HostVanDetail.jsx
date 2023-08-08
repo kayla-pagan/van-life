@@ -1,10 +1,14 @@
 import React from "react"
 import { useParams, Link, NavLink, Outlet } from "react-router-dom"
 import { HiArrowNarrowLeft } from "react-icons/hi"
+import { getHostVans } from "../../api"
+import loadingGif from "/assets/images/loading.gif"
 
 export default function HostVanDetail(){
-    const params = useParams()
     const [vanInfo, setVanInfo] = React.useState(null)
+    const [loading, setLoading] = React.useState(false)
+    const [error, setError] = React.useState(null)
+    const { id } = useParams()
     const activeStyle = {
         fontWeight: "bold",
         textDecoration: "underline",
@@ -12,15 +16,32 @@ export default function HostVanDetail(){
     }
 
     React.useEffect(() => {
-        async function getVanInfo(){
-            const response = await fetch(`/api/host/vans/${params.id}`)
-            const data = await response.json()
-            setVanInfo(data.vans)
+        async function loadVans() {
+            setLoading(true)
+            try {
+                const data = await getHostVans(id)
+                setVanInfo(data)
+            } catch (err) {
+                setError(err)
+            } finally {
+                setLoading(false)
+            }
         }
-        
-        getVanInfo()
 
-    }, [params.id])
+        loadVans()
+    }, [id])
+
+    if(loading){
+        return (
+            <main className="loading-container">
+                <img src={loadingGif} />
+            </main>
+        )
+    }
+
+    if(error) {
+        return <h1>There was an error: {error.message}</h1>
+    }
     
     return (
         <main className="host-van-detail--main">
