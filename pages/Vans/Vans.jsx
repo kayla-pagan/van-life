@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, useSearchParams } from 'react-router-dom'
 import { getVans } from "../../api"
+import loadingGif from "/assets/images/loading.gif"
 
 
 export default function Vans() {
@@ -67,7 +68,7 @@ export default function Vans() {
     if(loading){
         return (
             <main className="loading-container">
-                <img src="./assets/images/loading.gif" />
+                <img src={loadingGif} />
             </main>
         )
     }
