@@ -205,12 +205,13 @@ main {
     padding-block: 1.75em 3.875em;
 }
 
-.van--filters a {
+.van--filters button {
     color: #4D4D4D;
     text-align: center;
+    font-family: 'Inter', sans-serif;
 }
 
-.van--filters a:last-of-type {
+.clear {
     background-color: transparent;
     text-decoration: underline;
     font-weight: 500;
