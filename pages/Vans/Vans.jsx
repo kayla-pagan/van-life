@@ -38,15 +38,46 @@ export default function Vans() {
                 </Link>
             </div>
         ))
+
+    function handleFilterChange(key, value) {
+        setSearchParams(prevParams => {
+            if(value === null){
+                prevParams.delete(key)
+            }
+            else {
+                prevParams.set(key, value)
+            }
+            return prevParams
+        })
+    }
     
     return (
         <main className="van--main">
             <h1>Explore our van options</h1>
             <div className="van--filters">
-                <Link to="?type=simple">Simple</Link>
-                <Link to="?type=luxury">Luxury</Link>
-                <Link to="?type=rugged">Rugged</Link>
-                <Link to=".">Clear filters</Link>
+                <button 
+                    onClick={() => handleFilterChange("type", "simple")} 
+                    className="van-type simple"
+                >
+                    Simple
+                </button>
+                <button 
+                    onClick={() => handleFilterChange("type", "luxury")}
+                    className="van-type luxury"
+                >
+                    Luxury
+                </button>
+                <button 
+                    onClick={() => handleFilterChange("type", "rugged")}
+                    className="van-type rugged"
+                >
+                    Rugged
+                </button>
+                {typeFilter && <button 
+                    onClick={() => handleFilterChange("type", null)}
+                >
+                    Clear filters
+                </button>}
             </div>
             <div className="vans-container">
                 {vanElements}

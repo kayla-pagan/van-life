@@ -208,17 +208,12 @@ main {
 .van--filters a {
     color: #4D4D4D;
     text-align: center;
-    font-family: inherit;
-    font-weight: 500;
-    line-height: 1.49em;
-    background: #FFEAD0;
-    padding: 0.4375em 1.625em;
-    border-radius: 5px;
 }
 
 .van--filters a:last-of-type {
     background-color: transparent;
     text-decoration: underline;
+    font-weight: 500;
 }
 
 .vans-container {
