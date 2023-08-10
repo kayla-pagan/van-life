@@ -34,12 +34,13 @@ export default function Header(){
                     >
                         Vans
                     </NavLink>
-                    <NavLink
+                    <Link
                         to="/login"
                         style={({isActive}) => isActive ? activeStyle : null}
                     >
                         <img src={loginIcon} />
-                    </NavLink>
+                    </Link>
+                    <button onClick={fakeLogOut}>X</button>
                 </nav>
             </div>
       </header>

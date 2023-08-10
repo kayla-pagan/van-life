@@ -16,6 +16,7 @@ export default function Login(){
             try {
                 const data = await loginUser(loginFormData)
                 setError(null)
+                localStorage.setItem("loggedin", true)
                 navigate("/host", { replace: true })
                 
             } catch (err) {
