@@ -1,5 +1,11 @@
 import { initializeApp } from "firebase/app"
-import { getFirestore, collection } from "firebase/firestore/lite"
+import { 
+    getFirestore, 
+    collection, 
+    doc, 
+    getDoc, 
+    getDocs 
+} from "firebase/firestore/lite"
 
 const firebaseConfig = {
   apiKey: "AIzaSyBTJFCU1mN2zLEa8t3QajnFyGfwD3Q8SHA",
@@ -18,6 +24,24 @@ const vansCollectionRef = collection(db, "vans")
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(() => resolve(), ms))
+}
+
+export async function getVans(){
+    const snapshot = await getDocs(vansCollectionRef)
+    const vans = snapshot.docs.map(doc => ({
+        ...doc.data(),
+        id: doc.id
+    }))
+    return vans
+}
+
+export async function getVan(){
+    const docRef =  doc(db, "vans", id)
+    const snapshot = await getDoc(docRef)
+    return {
+        ...snapshot.data(),
+        id: snapshot.id
+    }
 }
 
 // export async function getVans(id) {
