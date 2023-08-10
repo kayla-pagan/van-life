@@ -1,7 +1,7 @@
 import React from "react"
 import { useParams, Link, NavLink, Outlet } from "react-router-dom"
 import { HiArrowNarrowLeft } from "react-icons/hi"
-import { getHostVans } from "../../api"
+import { getVan } from "../../api"
 import loadingGif from "/assets/images/loading.gif"
 
 export default function HostVanDetail(){
@@ -19,7 +19,7 @@ export default function HostVanDetail(){
         async function loadVans() {
             setLoading(true)
             try {
-                const data = await getHostVans(id)
+                const data = await getVan(id)
                 setVanInfo(data)
             } catch (err) {
                 setError(err)
