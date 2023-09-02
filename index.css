@@ -454,6 +454,12 @@ main {
     color: #FF8C38;
 }
 
+/* HOST */
+
+.host--nav {
+    margin-bottom: 2.625em;
+}
+
 /* host van page */
 
 .host-van--main {
@@ -633,6 +639,27 @@ main {
 
 /* host dashboard */
 
-.dashboard-main {
+.dashboard--main {
     min-height: calc(100vh - 13em);
+}
+
+.dashboard--income {
+    background: #FFEAD0;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+}
+
+.dashboard--income > div {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.income-info {
+    display: flex;
+    justify-content: space-between;
 }
