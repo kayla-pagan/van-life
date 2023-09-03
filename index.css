@@ -641,25 +641,81 @@ main {
 
 .dashboard--main {
     min-height: calc(100vh - 13em);
+    color: #161616;
 }
 
-.dashboard--income {
-    background: #FFEAD0;
-    height: 30vh;
+.dashboard--main a {
+    color: #161616;
+    font-family: Inter;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.375;
+}
+
+.dashboard--income-container, 
+.dashboard--reviews-container {
     display: flex;
     align-items: center;
 }
 
-.dashboard--income > div {
+.dashboard--income-container {
+    background: #FFEAD0;
+    height: 30vh;
+}
+
+.dashboard--income-content,
+.dashboard--reviews-content {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
+}
+
+.dashboard--income-content {
     flex-direction: column;
     gap: 2em;
 }
 
-.income-info {
+.dashboard--income-content h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 0.61;
+}
+
+.dashboard--income-content h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 0.8; 
+}
+
+.dashboard--income-content > div {
     display: flex;
     justify-content: space-between;
+}
+
+.dashboard--reviews-container {
+    background: #FFDDB2;
+    height: 15vh;
+}
+
+.dashboard--reviews-content {
+    justify-content: space-between;
+}
+
+.dashboard--reviews-content > div {
+    display: flex;
+    align-items: center;
+    gap: 0.75em;
+}
+
+.dashboard--reviews-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 0.9; 
+}
+
+.dashboard--income-content p {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.1; 
 }
