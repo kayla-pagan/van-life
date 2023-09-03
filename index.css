@@ -664,7 +664,8 @@ main {
 }
 
 .dashboard--income-content,
-.dashboard--reviews-content {
+.dashboard--reviews-content,
+.dashboard--vans-container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
@@ -718,4 +719,11 @@ main {
     font-size: 1.25rem;
     font-weight: 700;
     line-height: 1.1; 
+}
+
+.dashboard--vans-container > div:first-of-type {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 2.375em 0;
 }

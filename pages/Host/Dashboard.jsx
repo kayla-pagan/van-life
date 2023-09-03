@@ -28,7 +28,7 @@ export default function Dashboard(){
                 <div className="dashboard--vans-container">
                     <div>
                         <h2>Your listed vans</h2>
-                        <Link>View all</Link>
+                        <Link to="/host/vans">View all</Link>
                     </div>
                     <div>
                         {/* list of vans will go here */}
