@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import { getHostVans } from "../../api"
+import loadingGif from '../../assets/images/loading.gif'
 
 export default function Dashboard(){
     const [hostVans, setHostVans] = React.useState([])
@@ -65,6 +66,12 @@ export default function Dashboard(){
                         <Link to="/host/vans">View all</Link>
                     </div>
                     <div className="host-vans-list">
+                        {error && <h1>There was an error: {error.message}</h1>}
+                        {loading && (
+                            <div className="loading-container">
+                                <img src={loadingGif} />
+                            </div>
+                        )}
                         {hostVans.length > 0 && hostVanElements}
                     </div>
                 </div>
