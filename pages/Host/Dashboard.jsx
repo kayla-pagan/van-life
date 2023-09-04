@@ -1,7 +1,41 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import { getHostVans } from "../../api"
 
 export default function Dashboard(){
+    const [hostVans, setHostVans] = React.useState([])
+    const [loading, setLoading] = React.useState(false)
+    const [error, setError] = React.useState(null)
+
+    React.useEffect(() => {
+        async function loadHostVans(){
+            setLoading(true)
+            try {
+                const data = await getHostVans()
+                setHostVans(data)
+            } catch(err){
+                setError(err)
+            } finally {
+                setLoading(false)
+            }
+        }
+
+        loadHostVans()
+
+    }, [])
+
+    const hostVanElements = hostVans?.map(van => {
+        return(
+            <div key={van.id} to={van.id} className="host-van--tile">
+                <img src={van.imageUrl} />
+                <div className="host-van--info">
+                    <h3>{van.name}</h3>
+                    <p>${van.price}/day</p>
+                </div>
+            </div>
+        )
+})
+
     return (
         <main className="dashboard--main">
             <div className="dashboard--income-container">
@@ -26,12 +60,12 @@ export default function Dashboard(){
             </div>
             <div className="dashboard--vans">
                 <div className="dashboard--vans-container">
-                    <div>
+                    <div className="dashboard--vans-title">
                         <h2>Your listed vans</h2>
                         <Link to="/host/vans">View all</Link>
                     </div>
-                    <div>
-                        {/* list of vans will go here */}
+                    <div className="host-vans-list">
+                        {hostVans.length > 0 && hostVanElements}
                     </div>
                 </div>
             </div>

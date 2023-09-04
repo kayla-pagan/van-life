@@ -1,8 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
 * {
     box-sizing: border-box;
 }
@@ -631,6 +626,7 @@ main {
 .dashboard--main {
     min-height: calc(100vh - 13em);
     color: #161616;
+    padding-bottom: 3.3215em;
 }
 
 .dashboard--main a {
@@ -710,7 +706,11 @@ main {
     line-height: 1.1; 
 }
 
-.dashboard--vans-container > div:first-of-type {
+.dashboard--vans-container {
+    flex-direction: column;
+}
+
+.dashboard--vans-title {
     display: flex;
     justify-content: space-between;
     width: 100%;
