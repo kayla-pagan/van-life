@@ -716,3 +716,9 @@ main {
     width: 100%;
     margin: 2.375em 0;
 }
+
+.income--main {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
