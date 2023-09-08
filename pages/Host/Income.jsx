@@ -16,6 +16,7 @@ ChartJS.register(
 
 const options = {
     responsive: true,
+    maintainAspectRatio: true,
     barPercentage: 0.3,
     scales: {
         x: {
@@ -68,9 +69,9 @@ export default function Income(){
                 <h2>$2,260</h2>
             </section>
 
-            <section>
-                <Bar data={data} options={options} />
-            </section>
+            
+            <Bar data={data} options={options} />
+
 
             <section className="income--transactions">
                 <div className="income--transactions-title">
