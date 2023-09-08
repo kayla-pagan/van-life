@@ -16,6 +16,7 @@ ChartJS.register(
 
 export const options = {
     responsive: true,
+    barPercentage: 0.3,
     scales: {
         y: {
             max: 5000,
@@ -50,10 +51,37 @@ export const data = {
 export default function Income(){
     return (
         <main className="income--main">
-            <h1>Income</h1>
-            <p>Last <span>30 days</span></p>
-            <h2>$2,260</h2>
-            <Bar data={data} options={options} />
+            <section className="income--title">
+                <h1>Income</h1>
+                <p>Last <span>30 days</span></p>
+                <h2>$2,260</h2>
+            </section>
+
+            <section>
+                <Bar data={data} options={options} />
+            </section>
+
+            <section className="income--transactions">
+                <div className="income--transactions-title">
+                    <h2>Your transactions (3)</h2>
+                    <p>Last <span>30 days</span></p>
+                </div>
+
+                <div className="income--transaction-div">
+                    <h2>$720</h2>
+                    <p>12/1/2023</p>
+                </div>
+
+                <div className="income--transaction-div">
+                    <h2>$560</h2>
+                    <p>11/23/2023</p>
+                </div>
+
+                <div className="income--transaction-div">
+                    <h2>$980</h2>
+                    <p>11/10/2023</p>
+                </div>
+            </section>
         </main>
     )
 }
