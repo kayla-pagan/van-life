@@ -14,16 +14,26 @@ ChartJS.register(
     Tooltip
 )
 
-export const options = {
+const options = {
     responsive: true,
     barPercentage: 0.3,
     scales: {
+        x: {
+            ticks: {
+                font: {
+                    size: 23
+                }
+            }
+        },
         y: {
             max: 5000,
             min: 0,
             ticks: { 
                 callback: function(value, index) {
-                    return index % 2 === 0 ? `$${value}` : '';
+                    return index % 2 === 0 ? "$" + value : ''
+                },
+                font: {
+                    size: 18
                 }
         }
     }
@@ -32,7 +42,7 @@ export const options = {
 
 const labels = ['Ju', 'Au', 'Se', 'Oc', 'No', 'De']
 
-export const data = {
+const data = {
     labels,
     datasets: [
         {
@@ -44,7 +54,8 @@ export const data = {
                 'rgba(255, 234, 208, 1)',
                 'rgba(255, 140, 56, 1)',
                 'rgba(255, 140, 56, 1)'            
-            ]
+            ],
+            borderRadius: 5
     }]
 }
 

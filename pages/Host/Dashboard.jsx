@@ -39,7 +39,7 @@ export default function Dashboard(){
 
     return (
         <main className="dashboard--main">
-            <div className="dashboard--income-container">
+            <section className="dashboard--income-container">
                 <div className="dashboard--income-content">
                     <h1>Welcome!</h1>
                     <div>
@@ -48,8 +48,9 @@ export default function Dashboard(){
                     </div>
                     <h2>$2,260</h2>
                 </div>
-            </div>
-            <div className="dashboard--reviews-container">
+            </section>
+
+            <section className="dashboard--reviews-container">
                 <div className="dashboard--reviews-content">
                     <div>
                         <h2>Review score</h2>
@@ -58,8 +59,9 @@ export default function Dashboard(){
 
                     <Link to="/host/reviews">Details</Link>
                 </div>
-            </div>
-            <div className="dashboard--vans">
+            </section>
+
+            <section className="dashboard--vans">
                 <div className="dashboard--vans-container">
                     <div className="dashboard--vans-title">
                         <h2>Your listed vans</h2>
@@ -75,7 +77,7 @@ export default function Dashboard(){
                         {hostVans.length > 0 && hostVanElements}
                     </div>
                 </div>
-            </div>
+            </section>
         </main>
     )
 }
