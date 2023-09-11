@@ -15,7 +15,35 @@ export default function Reviews(){
                     <p>overall rating</p>
                 </div>
                 
+                <div>
+                    <p>5 stars</p>
+                    <div></div>
+                    <p>100%</p>
+                </div>
 
+                <div>
+                    <p>4 stars</p>
+                    <div></div>
+                    <p>0%</p>
+                </div>
+
+                <div>
+                    <p>3 stars</p>
+                    <div></div>
+                    <p>0%</p>
+                </div>
+
+                <div>
+                    <p>2 stars</p>
+                    <div></div>
+                    <p>0%</p>
+                </div>
+
+                <div>
+                    <p>1 star</p>
+                    <div></div>
+                    <p>0%</p>
+                </div>
             </section>
         </main>
     )
