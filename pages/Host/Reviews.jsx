@@ -9,7 +9,7 @@ export default function Reviews(){
                 <p>last <span>30 days</span></p>
             </section>
 
-            <section>
+            <section className="reviews--overall-rating">
                 <div>
                     <h2>5.0 <FaStar /></h2>
                     <p>overall rating</p>
