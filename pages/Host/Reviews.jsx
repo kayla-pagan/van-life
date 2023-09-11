@@ -1,4 +1,5 @@
 import React from "react"
+import { FaStar } from "react-icons/fa6"
 
 export default function Reviews(){
     return (
@@ -10,11 +11,11 @@ export default function Reviews(){
 
             <section>
                 <div>
-                    <h2>5.0</h2>
+                    <h2>5.0 <FaStar /></h2>
                     <p>overall rating</p>
                 </div>
                 
-                
+
             </section>
         </main>
     )
