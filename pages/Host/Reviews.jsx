@@ -4,7 +4,7 @@ import { FaStar } from "react-icons/fa6"
 export default function Reviews(){
     return (
         <main className="reviews--main">
-            <section>
+            <section className="reviews--title">
                 <h1>Your Reviews</h1>
                 <p>last <span>30 days</span></p>
             </section>
@@ -17,31 +17,31 @@ export default function Reviews(){
                 
                 <div>
                     <p>5 stars</p>
-                    <div></div>
+                    <div className="review--bar"></div>
                     <p>100%</p>
                 </div>
 
                 <div>
                     <p>4 stars</p>
-                    <div></div>
+                    <div className="review--bar"></div>
                     <p>0%</p>
                 </div>
 
                 <div>
                     <p>3 stars</p>
-                    <div></div>
+                    <div className="review--bar"></div>
                     <p>0%</p>
                 </div>
 
                 <div>
                     <p>2 stars</p>
-                    <div></div>
+                    <div className="review--bar"></div>
                     <p>0%</p>
                 </div>
 
                 <div>
                     <p>1 star</p>
-                    <div></div>
+                    <div className="review--bar"></div>
                     <p>0%</p>
                 </div>
             </section>
