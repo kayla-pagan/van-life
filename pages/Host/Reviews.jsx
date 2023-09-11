@@ -2,6 +2,20 @@ import React from "react"
 
 export default function Reviews(){
     return (
-        <h1>Reviews go here</h1>
+        <main className="reviews--main">
+            <section>
+                <h1>Your Reviews</h1>
+                <p>last <span>30 days</span></p>
+            </section>
+
+            <section>
+                <div>
+                    <h2>5.0</h2>
+                    <p>overall rating</p>
+                </div>
+                
+                
+            </section>
+        </main>
     )
 }
