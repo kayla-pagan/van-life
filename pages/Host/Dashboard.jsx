@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { getHostVans } from "../../api"
 import loadingGif from '../../assets/images/loading.gif'
+import { FaStar } from "react-icons/fa6"
 
 export default function Dashboard(){
     const [hostVans, setHostVans] = React.useState([])
@@ -54,7 +55,8 @@ export default function Dashboard(){
                 <div className="dashboard--reviews-content">
                     <div>
                         <h2>Review score</h2>
-                        <p>⭐<span>5.0</span>/5</p>
+                        <FaStar />
+                        <p><span>5.0</span>/5</p>
                     </div>
 
                     <Link to="/host/reviews">Details</Link>

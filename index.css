@@ -704,6 +704,13 @@ main {
     gap: 0.75em;
 }
 
+.dashboard--reviews-content svg {
+    fill: #FF8C38;
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+}
+
 .dashboard--reviews-content h2 {
     font-size: 1.5rem;
     font-weight: 700;
