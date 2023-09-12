@@ -778,12 +778,18 @@ main {
 .reviews--main {
     min-height: calc(100vh - 15.6em);
     width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 809px;
+    margin: 4em auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .reviews--main svg {
     fill: #FF8C38;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
 }
 
 .reviews--title, 
@@ -791,6 +797,26 @@ main {
     display: flex;
     align-items: center;
 }
+
+.reviews--title {
+    align-self: flex-start;
+}
+
+.reviews--title h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.051;
+    margin-right: 0.5em;
+}
+
+.reviews--title p, .reviews--individual-review p {
+    color: #4D4D4D;
+}
+
+.reviews--title span {
+    text-decoration: underline;
+}
+
 .reviews--overall-rating {
     padding-block: 2.25em;
 }
@@ -804,18 +830,47 @@ main {
     background-color: #FF8C38;
 }
 
+.reviews--overall-rating > div:first-of-type {
+    gap: 0.3125em;
+}
+
 .reviews--overall-rating > div:last-of-type p {
     margin-right: 11px;
 }
 
 .reviews--overall-title {
     margin-bottom: 0.825em;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.375;
+}
+
+.reviews--overall-title h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 0.716;
 }
 
 .review--bar {
-    width: 35vw;
+    width: 34vw;
     min-width: 200px;
     height: 8px;
     background-color: #B9B9B9;
     border-radius: 8px;
 }
+
+.reviews--individual-display h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.27;
+}
+
+.reviews--individual-review {
+    border-bottom: 1px solid #C7C7C7;
+    padding-block: 1.5625em;
+}
+
+.reviews--individual-review div {
+    margin-bottom: 0.8em;
+} 

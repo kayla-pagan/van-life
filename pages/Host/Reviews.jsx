@@ -11,8 +11,8 @@ export default function Reviews(){
 
             <section className="reviews--overall-rating">
                 <div className="reviews--overall-title">
-                    <h2>5.0 <FaStar /></h2>
-                    <p>overall rating</p>
+                    <h2>5.0</h2>
+                    <p><FaStar /> overall rating</p>
                 </div>
                 
                 <div>
@@ -46,9 +46,9 @@ export default function Reviews(){
                 </div>
             </section>
 
-            <section>
+            <section className="reviews--individual-display">
                 <h2>Reviews (2)</h2>
-                <div>
+                <div className="reviews--individual-review">
                     <div>
                         <FaStar />
                         <FaStar />
@@ -66,7 +66,8 @@ export default function Reviews(){
                         Highly recommend!
                     </p>
                 </div>
-                <div>
+                
+                <div className="reviews--individual-review">
                     <div>
                         <FaStar />
                         <FaStar />
