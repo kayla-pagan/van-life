@@ -775,6 +775,24 @@ main {
 
 /* reviews */
 
+.reviews--title, 
+.reviews--overall-rating > div {
+    display: flex;
+    align-items: center;
+}
+
+.reviews--overall-rating > div {
+    gap: 2em;
+}
+
+.reviews--overall-rating > div:nth-of-type(2) div {
+    background-color: #FF8C38;
+}
+
+.reviews--overall-rating > div:last-of-type p {
+    margin-right: 11px;
+}
+
 .review--bar {
     width: 300px;
     height: 8px;
