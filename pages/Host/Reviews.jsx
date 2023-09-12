@@ -11,7 +11,7 @@ export default function Reviews(){
 
             <section className="reviews--overall-rating">
                 <div className="reviews--overall-title">
-                    <h2>5.0 <FaStar className="reviews--star" /></h2>
+                    <h2>5.0 <FaStar /></h2>
                     <p>overall rating</p>
                 </div>
                 
