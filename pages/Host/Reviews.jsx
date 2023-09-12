@@ -10,8 +10,8 @@ export default function Reviews(){
             </section>
 
             <section className="reviews--overall-rating">
-                <div>
-                    <h2>5.0 <FaStar /></h2>
+                <div className="reviews--overall-title">
+                    <h2>5.0 <FaStar className="reviews--star" /></h2>
                     <p>overall rating</p>
                 </div>
                 

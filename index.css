@@ -793,8 +793,16 @@ main {
     margin-right: 11px;
 }
 
+.reviews--overall-title {
+    margin-bottom: 1.625em;
+}
+
+.reviews--star {
+    fill: #FF8C38;
+} 
+
 .review--bar {
-    width: 300px;
+    width: 20vw;
     height: 8px;
     background-color: #B9B9B9;
     border-radius: 8px;
