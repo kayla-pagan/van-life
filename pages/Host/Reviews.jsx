@@ -45,6 +45,32 @@ export default function Reviews(){
                     <p>0%</p>
                 </div>
             </section>
+
+            <section>
+                <h2>Reviews (2)</h2>
+                <div>
+                    <div>
+                        <FaStar />
+                        <FaStar />
+                        <FaStar />
+                        <FaStar />
+                        <FaStar />
+                    </div>
+                    <div></div>
+                    <p></p>
+                </div>
+                <div>
+                    <div>
+                        <FaStar />
+                        <FaStar />
+                        <FaStar />
+                        <FaStar />
+                        <FaStar />
+                    </div>
+                    <div></div>
+                    <p></p>
+                </div>
+            </section>
         </main>
     )
 }
