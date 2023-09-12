@@ -775,6 +775,16 @@ main {
 
 /* reviews */
 
+.reviews--main {
+    min-height: calc(100vh - 15.6em);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.reviews--main svg {
+    fill: #FF8C38;
+}
+
 .reviews--title, 
 .reviews--overall-rating > div {
     display: flex;
@@ -796,10 +806,6 @@ main {
 .reviews--overall-title {
     margin-bottom: 1.625em;
 }
-
-.reviews--star {
-    fill: #FF8C38;
-} 
 
 .review--bar {
     width: 20vw;
