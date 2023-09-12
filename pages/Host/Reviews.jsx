@@ -56,8 +56,15 @@ export default function Reviews(){
                         <FaStar />
                         <FaStar />
                     </div>
-                    <div></div>
-                    <p></p>
+                    <div>
+                        <p><span>Elliot</span> December 1, 2023</p>
+                    </div>
+                    <p>
+                        The beach bum is such as awesome van! Such as comfortable trip. 
+                        We had it for 2 weeks and there was not a single issue. 
+                        Super clean when we picked it up and the host is very comfortable and understanding. 
+                        Highly recommend!
+                    </p>
                 </div>
                 <div>
                     <div>
@@ -67,8 +74,13 @@ export default function Reviews(){
                         <FaStar />
                         <FaStar />
                     </div>
-                    <div></div>
-                    <p></p>
+                    <div>
+                        <p><span>Sandy</span> November 23, 2023</p>
+                    </div>
+                    <p>
+                        This is our third time using the Modest Explorer for our travels and we love it! 
+                        No complaints, absolutely perfect!
+                    </p>
                 </div>
             </section>
         </main>
