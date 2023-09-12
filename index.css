@@ -777,6 +777,7 @@ main {
 
 .reviews--main {
     min-height: calc(100vh - 15.6em);
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -790,9 +791,13 @@ main {
     display: flex;
     align-items: center;
 }
+.reviews--overall-rating {
+    padding-block: 2.25em;
+}
 
 .reviews--overall-rating > div {
     gap: 2em;
+    padding-bottom: 0.625em;
 }
 
 .reviews--overall-rating > div:nth-of-type(2) div {
@@ -804,11 +809,12 @@ main {
 }
 
 .reviews--overall-title {
-    margin-bottom: 1.625em;
+    margin-bottom: 0.825em;
 }
 
 .review--bar {
-    width: 20vw;
+    width: 35vw;
+    min-width: 200px;
     height: 8px;
     background-color: #B9B9B9;
     border-radius: 8px;
