@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app"
+import { getAuth } from "firebase/auth";
 import { 
     getFirestore, 
     collection, 
@@ -9,6 +10,7 @@ import {
     where
 } from "firebase/firestore/lite"
 
+
 const firebaseConfig = {
   apiKey: "AIzaSyBTJFCU1mN2zLEa8t3QajnFyGfwD3Q8SHA",
   authDomain: "vanlife-e6801.firebaseapp.com",
@@ -18,10 +20,12 @@ const firebaseConfig = {
   appId: "1:633047999208:web:f6e5430fb3451535c39f5d"
 }
 
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig)
 const db = getFirestore(app)
+export const auth = getAuth(app);
 
 const vansCollectionRef = collection(db, "vans")
+// const usersCollectionRef = collection(db, "users")
 
 
 function sleep(ms) {
@@ -54,21 +58,4 @@ export async function getHostVans(){
         id: doc.id
     }))
     return vans
-}
-
-export async function loginUser(creds) {
-    const res = await fetch("/api/login",
-        { method: "post", body: JSON.stringify(creds) }
-    )
-    const data = await res.json()
-
-    if (!res.ok) {
-        throw {
-            message: data.message,
-            statusText: res.statusText,
-            status: res.status
-        }
-    }
-
-    return data
 }

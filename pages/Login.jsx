@@ -1,6 +1,7 @@
 import React from "react"
 import { useNavigate, useLocation, Link } from "react-router-dom"
-import { loginUser } from "../api"
+import { signInWithEmailAndPassword } from "firebase/auth"
+import { auth } from "../api"
 
 export default function Login(){
     const [loginFormData, setLoginFormData] = React.useState({ email: "", password: ""})
@@ -12,13 +13,15 @@ export default function Login(){
 
     function handleSubmit(e){
         e.preventDefault()
+
         async function authUser() {
             setStatus("submitting")
             try {
-                const data = await loginUser(loginFormData)
+                const data = await signInWithEmailAndPassword(auth, loginFormData.email, loginFormData.password)
                 setError(null)
                 localStorage.setItem("loggedin", true)
                 navigate(from, { replace: true })
+                return data
                 
             } catch (err) {
                 setError(err)
