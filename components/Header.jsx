@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, NavLink } from "react-router-dom"
+import { logOut } from "../api"
 import loginIcon from "/assets/images/login-icon.svg"
 
 export default function Header(){
@@ -7,10 +8,6 @@ export default function Header(){
         fontWeight: "bold",
         textDecoration: "underline",
         color: "#161616"
-    }
-
-    function fakeLogOut() {
-        localStorage.removeItem("loggedin")
     }
 
     return (
@@ -44,7 +41,7 @@ export default function Header(){
                         <img src={loginIcon} />
                     </Link>
                     <Link>
-                        <button onClick={fakeLogOut}>
+                        <button onClick={() => {logOut()}}>
                             X
                         </button>
                     </Link>
