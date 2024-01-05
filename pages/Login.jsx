@@ -1,7 +1,7 @@
 import React from "react"
 import { useNavigate, useLocation, Link } from "react-router-dom"
-import { signInWithEmailAndPassword } from "firebase/auth"
-import { auth } from "../api"
+import { logIn } from "../api"
+
 
 export default function Login(){
     const [loginFormData, setLoginFormData] = React.useState({ email: "", password: ""})
@@ -17,11 +17,9 @@ export default function Login(){
         async function authUser() {
             setStatus("submitting")
             try {
-                const data = await signInWithEmailAndPassword(auth, loginFormData.email, loginFormData.password)
+                logIn(loginFormData.email, loginFormData.password)
                 setError(null)
-                localStorage.setItem("loggedin", true)
                 navigate(from, { replace: true })
-                return data
                 
             } catch (err) {
                 setError(err)
@@ -49,6 +47,7 @@ export default function Login(){
                 <input
                     name="email"
                     type="email"
+                    autoComplete="username"
                     onChange={handleChange}
                     placeholder="Email address"
                     value={loginFormData.email}
@@ -57,6 +56,7 @@ export default function Login(){
                 <input
                     name="password"
                     type="password"
+                    autoComplete="current-password"
                     onChange={handleChange}
                     placeholder="Password"
                     value={loginFormData.password}

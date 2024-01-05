@@ -1,5 +1,12 @@
 import { initializeApp } from "firebase/app"
-import { getAuth } from "firebase/auth";
+import { 
+    getAuth,
+    onAuthStateChanged,
+    setPersistence,
+    signInWithEmailAndPassword,
+    signOut
+} from "firebase/auth";
+
 import { 
     getFirestore, 
     collection, 
@@ -22,15 +29,11 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig)
 const db = getFirestore(app)
-export const auth = getAuth(app);
 
 const vansCollectionRef = collection(db, "vans")
-// const usersCollectionRef = collection(db, "users")
 
 
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(() => resolve(), ms))
-}
+const auth = getAuth(app)
 
 export async function getVans(){
     const snapshot = await getDocs(vansCollectionRef)
@@ -59,3 +62,32 @@ export async function getHostVans(){
     }))
     return vans
 }
+
+export async function logIn(email, password){
+    const userCredential = await signInWithEmailAndPassword(auth, email, password)
+
+    return userCredential
+}
+
+export function logOut(){
+    signOut(auth)
+}
+
+export async function verifyUser(userState, completionState){
+
+    const unsubscribe = await onAuthStateChanged(auth, user => {
+        if(user){
+            userState(user)
+        } else {
+            userState(null)
+        }
+    })
+
+    completionState(true)
+
+    return () => {
+        unsubscribe()
+    }
+}
+
+// TODO: Figure out why I need to sign in twice to log in
