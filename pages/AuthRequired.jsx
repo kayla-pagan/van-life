@@ -1,6 +1,5 @@
 import React from "react"
 import { Outlet, Navigate, useLocation } from "react-router-dom"
-import { getAuth } from "firebase/auth"
 import { verifyUser } from "../api"
 
 export default function AuthRequired(){
@@ -8,10 +7,10 @@ export default function AuthRequired(){
     const [authComplete, setAuthComplete] = React.useState(false)
     const location = useLocation()
 
+
     React.useEffect(() => {
         verifyUser(setAuthUser, setAuthComplete)
-    }, [getAuth().currentUser])
-
+    }, [])
     
 
     return (
@@ -24,7 +23,7 @@ export default function AuthRequired(){
                         to="/login" 
                         state={{
                             message: "You must log in first",
-                            from: location.pathname 
+                            from: location.pathname
                         }} 
                         replace
                     /> 

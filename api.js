@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app"
 import { 
+    browserSessionPersistence,
     getAuth,
     onAuthStateChanged,
     setPersistence,
@@ -63,31 +64,28 @@ export async function getHostVans(){
     return vans
 }
 
-export async function logIn(email, password){
-    const userCredential = await signInWithEmailAndPassword(auth, email, password)
-
-    return userCredential
+export function logIn(email, password) {
+    return setPersistence(auth, browserSessionPersistence).then(() => {
+        return signInWithEmailAndPassword(auth, email, password)
+    })
 }
+
 
 export function logOut(){
     signOut(auth)
 }
 
-export async function verifyUser(userState, completionState){
-
-    const unsubscribe = await onAuthStateChanged(auth, user => {
-        if(user){
-            userState(user)
+export function verifyUser(userState, completionState) {
+    const unsubscribe = onAuthStateChanged(auth, async user => {
+        if (user) {
+            userState(user);
         } else {
-            userState(null)
+            userState(null);
         }
-    })
-
-    completionState(true)
+        completionState(true);
+    });
 
     return () => {
-        unsubscribe()
+        unsubscribe();
     }
 }
-
-// TODO: Figure out why I need to sign in twice to log in

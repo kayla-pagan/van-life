@@ -9,25 +9,38 @@ export default function Login(){
     const [error, setError] = React.useState(null)
     const location = useLocation()
     const navigate = useNavigate()
-    const from = location.state?.from || "/host"
+    const from = location.state?.from || '/host'
 
     function handleSubmit(e){
         e.preventDefault()
+        e.stopPropagation()
 
         async function authUser() {
             setStatus("submitting")
             try {
-                logIn(loginFormData.email, loginFormData.password)
+                const userCredential = await logIn(loginFormData.email, loginFormData.password)
                 setError(null)
                 navigate(from, { replace: true })
+                return userCredential
                 
             } catch (err) {
-                setError(err)
+                console.log(err)
+                switch(err.message) {
+                    case 'Firebase: Error (auth/invalid-email).':
+                        setError("invalid email")
+                        break
+
+                    case 'Firebase: Error (auth/invalid-credential).':
+                        setError("invalid credential")
+                        break
+                }
             } finally {
                 setStatus("idle")
             }
         }
         authUser()
+
+        return false
     }
 
     function handleChange(e){
@@ -38,11 +51,12 @@ export default function Login(){
         }))
     }
 
+
     return (
         <main className="login-container">
             {location.state?.message && <p className="login-message">{location.state.message}</p>}
             <h1>Sign in to your account</h1>
-            {error && <p className="login-message">{error.message}</p>}
+            {error && <p className="login-message">{error}</p>}
             <form onSubmit={handleSubmit} className="login-form">
                 <input
                     name="email"
