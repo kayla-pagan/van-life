@@ -1,7 +1,10 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import '../index.css'
 
 export default function About(){
+  const navigate = useNavigate()
+
   return (
       <main className="about--main">
         <section className="about--hero"></section>
@@ -18,7 +21,7 @@ export default function About(){
             <h3>Your destination is waiting. 
             <br />
             Your van is ready.</h3>
-            <button>Explore our vans</button>
+            <button onClick={() => navigate("/vans")}>Explore our vans</button>
           </div>
         </section>
       </main>
